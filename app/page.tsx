@@ -2,7 +2,6 @@ import {
     GithubIcon,
     TwitterIcon,
     LinkedInIcon,
-    ReactIcon,
 } from '../components/icons';
 
 export default function Page() {
