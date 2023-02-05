@@ -1,19 +1,35 @@
 import * as fs from 'fs';
-import { join } from 'path'
+// import { join } from 'path'
+import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown'
+
+import { allPosts } from 'contentlayer/generated'
+
+export async function generateStaticParams() {
+    return allPosts.map((post) => ({
+        slug: post.slug,
+    }));
+}
 
 // app/page.js
 // This file maps to the index route (/)
 export default function Page({ params }) {
-    console.log(process.cwd())
-    const path = join("content", params.slug + ".md")
-    let content
-    try {
-        content = fs.readFileSync(path, 'utf8')
-
-    } catch (e) {
-        return <h1>Not found.</h1>
+    const post = allPosts.find((post) => post.slug === params.slug);
+    if (!post) {
+        notFound()
     }
-    return <ReactMarkdown children={content} />
+    return <div className="flex flex-col gap-7 px-52">
+        <div className="flex flex-row">
+            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{post.title}</h1>
+        </div>
+        <div className="flex flex-row">
+            <p className="font-mono italic">{post.date}</p>
+        </div>
+        <div className="flex flex-row">
+            <div className="flex flex-col font-mono gap-4">
+                <ReactMarkdown children={post.body.raw} />
+            </div>
+        </div>
+    </div >
 
 }

@@ -1,5 +1,7 @@
-# Journey
-*Published Febuary 4th, 2023*
+---
+title: Journey
+date: Febuary 4, 2023
+---
 
 Hi, I’m Matt. 
 
