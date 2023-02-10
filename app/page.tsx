@@ -2,6 +2,7 @@ import {
     GithubIcon,
     TwitterIcon,
     LinkedInIcon,
+    BlogIcon,
 } from '../components/icons';
 
 export default function Page() {
@@ -23,6 +24,9 @@ export default function Page() {
             <a target="_blank" href="https://linkedin.com/in/mattcarrollcode">
                 <LinkedInIcon />
             </a>
+            <a href="/blog">
+                <BlogIcon />
+            </a>
         </div>
     </div>
 }
@@ -34,8 +38,8 @@ function Link({ name, url }) {
 function Description() {
     return <div className="text-white font-mono">
         Hey, I'm Matt - I help people build better developer products.
-        Right now, I'm working on <Link url="https://reactjs.org" name="React ⚛️" />.
-        I used to work on <Link url="https://developers.google.com/youtube" name="YouTube 📺" />
+        Currently, I am focused on <Link url="https://reactjs.org" name="React ⚛️" />.
+        My previous work include <Link url="https://developers.google.com/youtube" name="YouTube 📺" />
         , <Link url="https://fuchsia.dev/" name="Fuchsia 🌺" />
         , <Link url="https://cloud.google.com/products/ai" name="Google Cloud AI ☁" />
         , and the <Link url="https://developers.google.com/assistant" name="Google Assistant 🗣️" />.

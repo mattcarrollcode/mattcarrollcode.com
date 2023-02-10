@@ -7,7 +7,7 @@ I've recently started as a developer advocate working on React. React has a lot 
 
 I’ve decided to try building a travel planning app I’m going to call Journey because, ChatGPT:
 
-![ChatGPT names for a travel app](/img/journey/chatgpt.png "ChatGPT")
+![ChatGPT names for a travel app](/img/blog/journey/chatgpt.png "ChatGPT")
 
 Along the way, I want to use some of React's cutting-edge features. Front-end frameworks have evolved to include how clients work with servers. Coupling the server and client has led to better developer and user experiences. The React team has been a prominent force in this shift with React Server Components. I'm going to be trying out React server components with [Next.js 13’s app directory](https://beta.nextjs.org/docs/app-directory-roadmap). I want to try this new paradigm out. 
 
