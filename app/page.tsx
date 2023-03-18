@@ -10,7 +10,7 @@ export default function Page() {
         <div className="flex flex-row justify-center gap-7">
             <div className="flex flex-col"><ProfilePicture /></div>
             <div className="flex flex-col gap-2 w-72">
-                <h1 className="font-bold text-3xl font-mono text-white">Matt Carroll</h1>
+                <h1 className="font-bold text-3xl font-sans text-white">Matt Carroll</h1>
                 <Description />
             </div>
         </div>

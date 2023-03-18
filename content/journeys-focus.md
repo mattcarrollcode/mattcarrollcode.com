@@ -2,7 +2,6 @@
 title: Journey's focus
 date: March 17, 2023
 ---
-# Thinking about Journey’s first focus
 
 I’m working on a travel planning app called [Journey](/blog/journey). I was to start by focusing on the minimum amount of stuff I can do to have something to play around with. So, what is _needed_ to plan travel?
 

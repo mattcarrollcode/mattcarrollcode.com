@@ -29,8 +29,18 @@ export default function Page({ params }) {
                 <p className="font-mono italic">{prettyDate}</p>
             </div>
             <div className="flex flex-row">
-                <div className="flex flex-col font-mono gap-4 [&>*]:list-disc">
-                    <ReactMarkdown children={post.body.raw} />
+                <div className="flex flex-col text-xl gap-4">
+                    <ReactMarkdown 
+                    children={post.body.raw} 
+                    // className="[&>ul]:list-disc [&>ul]:list-inside [&>li]:indent-5"
+                    linkTarget="_blank"
+                    components={{
+                        // Rewrite `li` to add tailwind styles
+                        li: ({node, ...props}) => <li className="list-disc list-outside ml-8" {...props} />,
+                        // Rewrite `code` to add style TODO: add syntax highlighting
+                        code: ({node, ...props}) => <code className="font-mono" {...props} />
+                      }}
+                    />
                 </div>
             </div>
         </div >
