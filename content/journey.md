@@ -13,8 +13,8 @@ Along the way, I want to use some of React's cutting-edge features. Front-end fr
 
 I’ve often observed a chasm between a real app and documentation. Documentation that shows you how to compose multiple concepts is rare. This (what you’re reading now) is the beginning of my attempt to fix this ramp from getting started to an intermediate project. The only thing that is missing to bridge the gap between getting started and a real app is to:
 
-a) build a non-trivial project and 
+1. build a non-trivial project and 
 
-b) write down the silly things you did, how you fixed them, and what you’d do differently
+2. write down the silly things you did, how you fixed them, and what you’d do differently
 
 Along this journey (ah, ok pun time) I expect to make a ridiculous amount of mistakes. I’ve undoubtedly made dozens just in this post and how I'm thinking about this project now. I will document them all here, along with my fixes, and what I would do differently if I was starting fresh.

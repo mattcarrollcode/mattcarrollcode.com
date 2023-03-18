@@ -29,7 +29,7 @@ export default function Page({ params }) {
                 <p className="font-mono italic">{prettyDate}</p>
             </div>
             <div className="flex flex-row">
-                <div className="flex flex-col font-mono gap-4">
+                <div className="flex flex-col font-mono gap-4 [&>*]:list-disc">
                     <ReactMarkdown children={post.body.raw} />
                 </div>
             </div>
