@@ -37,7 +37,7 @@ function Link({ name, url }) {
 
 function Description() {
     return <div className="text-white font-mono">
-        Hey, I'm Matt - I help people build better developer products.
+        Hey, I&apos;m Matt - I help people build better developer products.
         Currently, I am focused on <Link url="https://reactjs.org" name="React ⚛️" />.
         My previous work include <Link url="https://developers.google.com/youtube" name="YouTube 📺" />
         , <Link url="https://fuchsia.dev/" name="Fuchsia 🌺" />
@@ -49,5 +49,5 @@ function Description() {
 
 
 function ProfilePicture() {
-    return <img src="/profile.png" className="rounded-full object-cover h-48 w-48" />
+    return <img src="/profile.png" alt="Matt Carroll headshot" className="rounded-full object-cover h-48 w-48" />
 }

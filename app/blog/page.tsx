@@ -1,8 +1,3 @@
-import * as fs from 'fs';
-// import { join } from 'path'
-import { notFound } from 'next/navigation';
-import ReactMarkdown from 'react-markdown'
-
 import { allPosts } from 'contentlayer/generated'
 
 // app/page.js
@@ -23,7 +18,7 @@ function Posts() {
     const content = posts.map((post) => {
         const date = new Date(post.date)
         const prettyDate = date.toLocaleDateString('en-us', { year: 'numeric', month: 'long', day: 'numeric' })
-        return <Post slug={post.slug} title={post.title} date={prettyDate} />
+        return <Post key={post.slug} slug={post.slug} title={post.title} date={prettyDate} />
     })
     return <>{content}</>
 }

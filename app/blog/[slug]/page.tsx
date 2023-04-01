@@ -1,8 +1,6 @@
-import * as fs from 'fs';
-// import { join } from 'path'
+/* eslint-disable react/no-children-prop */
+import ReactMarkdown from 'react-markdown' // ReactMarkdown uses  `children` prop
 import { notFound } from 'next/navigation';
-import ReactMarkdown from 'react-markdown'
-
 import { allPosts } from 'contentlayer/generated'
 
 export async function generateStaticParams() {
@@ -30,8 +28,9 @@ export default function Page({ params }) {
             </div>
             <div className="flex flex-row">
                 <div className="flex flex-col text-xl gap-4">
+                    {/* eslint-disable react/no-children-prop */}
                     <ReactMarkdown 
-                    children={post.body.raw} 
+                    children={post.body.raw}
                     // className="[&>ul]:list-disc [&>ul]:list-inside [&>li]:indent-5"
                     linkTarget="_blank"
                     components={{

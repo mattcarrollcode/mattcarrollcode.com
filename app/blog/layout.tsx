@@ -1,4 +1,3 @@
-// app/blog/layout.js
 export default function BlogLayout({ children }) {
     return <>
         <header className="p-4 mb-4 md:px-64 flex justify-between items-center">
