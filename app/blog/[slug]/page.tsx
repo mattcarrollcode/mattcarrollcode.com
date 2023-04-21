@@ -1,5 +1,6 @@
 /* eslint-disable react/no-children-prop */
 import ReactMarkdown from 'react-markdown' // ReactMarkdown uses  `children` prop
+import remarkGfm from 'remark-gfm'
 import { notFound } from 'next/navigation';
 import { allPosts } from 'contentlayer/generated'
 
@@ -39,6 +40,7 @@ export default function Page({ params }) {
                         // Rewrite `code` to add style TODO: add syntax highlighting
                         code: ({node, ...props}) => <code className="font-mono" {...props} />
                       }}
+                     remarkPlugins={[remarkGfm]}
                     />
                 </div>
             </div>
