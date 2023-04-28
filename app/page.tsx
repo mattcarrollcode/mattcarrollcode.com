@@ -3,6 +3,7 @@ import {
     TwitterIcon,
     LinkedInIcon,
     BlogIcon,
+    StackOverflowIcon,
 } from '../components/icons';
 
 export default function Page() {
@@ -24,6 +25,9 @@ export default function Page() {
             <a target="_blank" href="https://linkedin.com/in/mattcarrollcode">
                 <LinkedInIcon />
             </a>
+            <a target="_blank" href="https://stackoverflow.com/users/2472282/mattcarrollcode">
+                <StackOverflowIcon />
+            </a>
             <a href="/blog">
                 <BlogIcon />
             </a>
@@ -39,7 +43,7 @@ function Description() {
     return <div className="text-white font-mono">
         Hey, I&apos;m Matt - I help people build better developer products through community.
         Most recently, I was focused on <Link url="https://reactjs.org" name="React ⚛️" />.
-        My previous work include <Link url="https://developers.google.com/youtube" name="YouTube 📺" />
+        My previous work also includes <Link url="https://developers.google.com/youtube" name="YouTube 📺" />
         , <Link url="https://fuchsia.dev/" name="Fuchsia 🌺" />
         , <Link url="https://cloud.google.com/products/ai" name="Google Cloud AI ☁" />
         , and the <Link url="https://developers.google.com/assistant" name="Google Assistant 🗣️" />.
