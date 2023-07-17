@@ -42,8 +42,8 @@ function Link({ name, url }) {
 function Description() {
     return <div className="text-white font-mono">
         Hey, I&apos;m Matt - I help people build better developer products through community.
-        Most recently, I was focused on <Link url="https://reactjs.org" name="React ⚛️" />.
-        My previous work also includes <Link url="https://developers.google.com/youtube" name="YouTube 📺" />
+        Currently, I am focused on <Link url="https://reactjs.org" name="React ⚛️" />.
+        My previous work includes <Link url="https://developers.google.com/youtube" name="YouTube 📺" />
         , <Link url="https://fuchsia.dev/" name="Fuchsia 🌺" />
         , <Link url="https://cloud.google.com/products/ai" name="Google Cloud AI ☁" />
         , and the <Link url="https://developers.google.com/assistant" name="Google Assistant 🗣️" />.

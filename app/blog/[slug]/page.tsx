@@ -38,7 +38,9 @@ export default function Page({ params }) {
                         // Rewrite `li` to add tailwind styles
                         li: ({node, ...props}) => <li className="list-disc list-outside ml-8" {...props} />,
                         // Rewrite `code` to add style TODO: add syntax highlighting
-                        code: ({node, ...props}) => <code className="font-mono" {...props} />
+                        code: ({node, ...props}) => <code className="font-mono" {...props} />,
+                        // Rewrite `a` to add style
+                        a: ({node, ...props}) => <a className="underline hover:text-purple-600" {...props} />
                       }}
                      remarkPlugins={[remarkGfm]}
                     />
