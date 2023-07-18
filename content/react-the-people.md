@@ -1,6 +1,6 @@
 ---
 title: React - the people
-date: July 17, 2023
+date: July 18, 2023
 ---
 
 I left Google to learn about frontend development. Up to that point my career would be best characterized as a series of backend developer experience positions. I had no idea the kind of community I’d be joining or the quality of the people that I would be working with.

@@ -5,6 +5,7 @@ import {
     BlogIcon,
     StackOverflowIcon,
 } from '../components/icons';
+import { Link } from '../components/link';
 
 export default function Page() {
     return <div className="flex flex-col gap-7">
@@ -33,10 +34,6 @@ export default function Page() {
             </a>
         </div>
     </div>
-}
-
-function Link({ name, url }) {
-    return <a target="_blank" className="underline hover:text-purple-600" href={url}>{name}</a>
 }
 
 function Description() {

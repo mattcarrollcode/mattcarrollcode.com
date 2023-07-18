@@ -1,7 +1,7 @@
 /* eslint-disable react/no-children-prop */
 import ReactMarkdown from 'react-markdown' // ReactMarkdown uses  `children` prop
 import remarkGfm from 'remark-gfm'
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation'
 import { allPosts } from 'contentlayer/generated'
 
 export async function generateStaticParams() {
@@ -10,13 +10,15 @@ export async function generateStaticParams() {
     }));
 }
 
-// app/page.js
-// This file maps to the index route (/)
 export default function Page({ params }) {
     const post = allPosts.find((post) => post.slug === params.slug);
     if (!post) {
-        notFound()
+        // This is necessary because use the `notFound`
+        // function doesn't load CSS for some reason
+        // TODO: change this redirect to `notFound`
+        redirect('/not-found')
     }
+
     const date = new Date(post.date)
     const prettyDate = date.toLocaleDateString('en-us', { year: 'numeric', month: 'long', day: 'numeric' })
     return <section>
@@ -30,19 +32,19 @@ export default function Page({ params }) {
             <div className="flex flex-row">
                 <div className="flex flex-col text-xl gap-4">
                     {/* eslint-disable react/no-children-prop */}
-                    <ReactMarkdown 
-                    children={post.body.raw}
-                    // className="[&>ul]:list-disc [&>ul]:list-inside [&>li]:indent-5"
-                    linkTarget="_blank"
-                    components={{
-                        // Rewrite `li` to add tailwind styles
-                        li: ({node, ...props}) => <li className="list-disc list-outside ml-8" {...props} />,
-                        // Rewrite `code` to add style TODO: add syntax highlighting
-                        code: ({node, ...props}) => <code className="font-mono" {...props} />,
-                        // Rewrite `a` to add style
-                        a: ({node, ...props}) => <a className="underline hover:text-purple-600" {...props} />
-                      }}
-                     remarkPlugins={[remarkGfm]}
+                    <ReactMarkdown
+                        children={post.body.raw}
+                        // className="[&>ul]:list-disc [&>ul]:list-inside [&>li]:indent-5"
+                        linkTarget="_blank"
+                        components={{
+                            // Rewrite `li` to add tailwind styles
+                            li: ({ node, ...props }) => <li className="list-disc list-outside ml-8" {...props} />,
+                            // Rewrite `code` to add style TODO: add syntax highlighting
+                            code: ({ node, ...props }) => <code className="font-mono" {...props} />,
+                            // Rewrite `a` to add style
+                            a: ({ node, ...props }) => <a className="underline hover:text-purple-600" {...props} />
+                        }}
+                        remarkPlugins={[remarkGfm]}
                     />
                 </div>
             </div>
