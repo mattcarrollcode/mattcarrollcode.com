@@ -1,5 +1,10 @@
 {
   "type": "module",
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev --manual",
+    "start": "remix-serve ./build/index.js"
+  },
   "dependencies": {
     "@remix-run/node": "^2.5.1",
     "@remix-run/react": "^2.5.1",
