@@ -1,5 +1,5 @@
 {
-  "type": "module",
+
   "scripts": {
     "build": "remix build",
     "dev": "remix dev --manual",
