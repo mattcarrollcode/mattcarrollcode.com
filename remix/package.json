@@ -1,8 +1,7 @@
 {
-
+  "type": "module",
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev --manual",
     "start": "remix-serve ./build/index.js"
   },
   "dependencies": {
