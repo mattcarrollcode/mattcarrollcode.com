@@ -1,0 +1,11 @@
+{
+    "type": "module",
+    "devDependencies": {
+        "@babel/core": "^7.23.7",
+        "@babel/preset-react": "^7.23.3",
+        "postcss-import": "^16.0.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tailwindcss": "^3.4.1"
+    }
+}
