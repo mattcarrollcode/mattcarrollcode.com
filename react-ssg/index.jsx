@@ -17,7 +17,7 @@ export default function App() {
 function Page() {
   return <div className="flex flex-col gap-7">
     <div className="flex flex-row justify-center gap-7">
-      <div className="flex flex-col w-48 pt-6"><ProfilePicture /></div>
+      <div className="flex flex-col w-48 pt-6"><ProfilePicture src={"/profile.png"} /></div>
       <div className="flex flex-col gap-2 w-72">
         <h1 className="font-bold text-3xl font-sans text-white">Matt Carroll</h1>
         <Description />
@@ -53,8 +53,8 @@ function Description() {
 
 
 
-function ProfilePicture() {
-  return <img src={profile} alt="Matt Carroll headshot" className="rounded-full" />
+function ProfilePicture({src}) {
+  return <img src={src} alt="Matt Carroll headshot" className="rounded-full" />
 }
 
 function Link({ name, url, newWindow }) {

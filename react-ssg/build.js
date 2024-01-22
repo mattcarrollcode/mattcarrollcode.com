@@ -1,22 +1,38 @@
 import fs from 'node:fs/promises'
 import { renderToStaticMarkup } from "react-dom/server"
 import babel from "@babel/core"
-// import reactPreset from "@babel/preset-react"
 
+import autoprefixer from 'autoprefixer'
+import postcss from 'postcss'
+import postcssNested from 'postcss-nested'
+import tailwindcss from 'tailwindcss'
+import cssnano from 'cssnano'
+
+const inputFilename = "index.jsx";
+const inputCSSFilename = "input.css";
+const tempFilename = 'index_.js';
+const outputFilename = 'index.html';
+const outputCSSFilename = 'main.css';
 
 async function build() {
-    const filename = "index.js";
-    const source = await fs.readFile(filename, 'utf-8');
+    // Transform JSX to JS
+    const source = await fs.readFile(inputFilename, 'utf-8');
     const result = await babel.transformAsync(source, {
-        presets: [["@babel/preset-react", {"runtime": "automatic"}]],
+        presets: [["@babel/preset-react", { "runtime": "automatic" }]],
     });
-    const tempFilename = 'index_.js';
     await fs.writeFile(tempFilename, result.code);
     const { default: App } = await import('./index_.js');
-    const ssg = renderToStaticMarkup(App())
-    await fs.writeFile('public/index.html', ssg);
     await fs.unlink(tempFilename);
 
+    // Render to HTML
+    const ssg = renderToStaticMarkup(App())
+    await fs.writeFile(`public/${outputFilename}`, ssg);
+
+    // Use PostCSS to process Tailwind styles
+    const pcss = postcss([autoprefixer, postcssNested, tailwindcss, cssnano])
+    const css = await fs.readFile(inputCSSFilename)
+    const cssResult = await pcss.process(css, { from: inputCSSFilename, to: `public/${outputCSSFilename}` })
+    fs.writeFile(`public/${outputCSSFilename}`, cssResult.css)
 }
 
 build()
