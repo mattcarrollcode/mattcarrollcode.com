@@ -2,10 +2,7 @@ import stylesheet from "./tailwind.css";
 import profile from "./profile.png";
 import favicon from "./favicon.ico";
 
-import {
-  Links,
-  Meta,
-} from "@remix-run/react";
+import { Links } from "@remix-run/react";
 
 export const links = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -14,15 +11,18 @@ export const links = () => [
 
 export const meta = () => [
   { title: "Matt Carroll" },
-  { name: "viewport", content: "width=device-width, initial-scale=1.0" }
+  { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+  { charSet }
 ];
 
 
 export default function App() {
   return (
-    <html>
+    <html lang="en">
       <head>
-        <Meta />
+        <title>Matt Carroll</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <Links />
       </head>
       <body className="antialiased mb-40 flex flex-col mx-4 mt-8 bg-gradient-to-r from-gray-900 via-stone-900 to-black text-white bg-black">

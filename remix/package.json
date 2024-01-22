@@ -1,5 +1,4 @@
 {
-  "type": "module",
   "scripts": {
     "build": "remix build",
     "start": "remix-serve ./build/index.js"
