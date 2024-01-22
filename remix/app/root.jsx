@@ -9,13 +9,6 @@ export const links = () => [
   { rel: "icon", href: favicon },
 ];
 
-export const meta = () => [
-  { title: "Matt Carroll" },
-  { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-  { charSet }
-];
-
-
 export default function App() {
   return (
     <html lang="en">

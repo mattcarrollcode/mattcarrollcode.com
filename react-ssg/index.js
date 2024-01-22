@@ -1,8 +1,11 @@
 export default function App() {
   return (
-    <html>
+    <html lang="en">
       <head>
         <title>Matt Carroll</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="main.css" rel="stylesheet" />
       </head>
       <body className="antialiased mb-40 flex flex-col mx-4 mt-8 bg-gradient-to-r from-gray-900 via-stone-900 to-black text-white bg-black">
         <Page />
@@ -14,7 +17,7 @@ export default function App() {
 function Page() {
   return <div className="flex flex-col gap-7">
     <div className="flex flex-row justify-center gap-7">
-      <div className="flex flex-col"><ProfilePicture /></div>
+      <div className="flex flex-col w-48 pt-6"><ProfilePicture /></div>
       <div className="flex flex-col gap-2 w-72">
         <h1 className="font-bold text-3xl font-sans text-white">Matt Carroll</h1>
         <Description />
@@ -51,7 +54,7 @@ function Description() {
 
 
 function ProfilePicture() {
-  return <img src={profile} alt="Matt Carroll headshot" className="rounded-full object-cover h-48 w-48" />
+  return <img src={profile} alt="Matt Carroll headshot" className="rounded-full" />
 }
 
 function Link({ name, url, newWindow }) {
