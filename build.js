@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises'
-import { renderToStaticMarkup } from "react-dom/server"
+import { prerenderToNodeStream } from 'react-dom/static';
 import babel from "@babel/core"
 
 import autoprefixer from 'autoprefixer'
@@ -25,8 +25,14 @@ async function build() {
     await fs.unlink(tempFilename);
 
     // Render to HTML
-    const ssg = renderToStaticMarkup(App())
-    await fs.writeFile(`public/${outputFilename}`, ssg);
+    const { prelude } = await prerenderToNodeStream(App());
+    let ssg = '';
+    prelude.on('data', (chunk) => {
+        ssg += chunk;
+    });
+    prelude.on('end', async () => {
+     await fs.writeFile(`public/${outputFilename}`, ssg);
+    })
 
     // Use PostCSS to process Tailwind styles
     const pcss = postcss([autoprefixer, postcssNested, tailwindcss, cssnano])
